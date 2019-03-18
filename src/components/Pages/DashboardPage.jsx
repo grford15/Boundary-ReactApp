@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import {Link} from "react-router-dom";
+
 
 class DashboardPage extends React.Component {
     // constructor(props){
@@ -11,12 +11,8 @@ class DashboardPage extends React.Component {
         console.log(this.state);
         
         return (
-            <div>
-                Dashboard!
-
-                <Link to="/users" className="btn btn-link">Users</Link>
-
-                <Link to="/products" className="btn btn-link">Products</Link>
+            <div className="container">
+                <h1>Welcome to your Dashboard</h1>
             </div>
         );
     }

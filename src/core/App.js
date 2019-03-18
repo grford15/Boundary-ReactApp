@@ -9,6 +9,7 @@ import './App.css';
 import {ProtectedRoute} from "../components/Routes/ProtectedRoute";
 import RegisterPage from "../components/Pages/RegisterPage";
 import UsersPage from "../components/Pages/UsersPage";
+import ProducsPage from "../components/Pages/ProductsPage";
 
 class App extends Component {
   constructor(props) {
@@ -29,6 +30,7 @@ class App extends Component {
                   <Route path="/register" component={RegisterPage}/>
                   <ProtectedRoute exact path="/" component={DashboardPage} authStore={this.props.auth}/>
                   <ProtectedRoute exact path="/users" component={UsersPage} checkingFunction={this.props.auth}/>
+                  <ProtectedRoute exact path="/products" component={ProducsPage} checkingFunction={this.props.auth}/>
                 </div>
               </Router>
             </div>

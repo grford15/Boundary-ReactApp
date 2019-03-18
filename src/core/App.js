@@ -10,6 +10,7 @@ import {ProtectedRoute} from "../components/Routes/ProtectedRoute";
 import RegisterPage from "../components/Pages/RegisterPage";
 import UsersPage from "../components/Pages/UsersPage";
 import ProducsPage from "../components/Pages/ProductsPage";
+import Navbar from "../components/Navbar";
 
 class App extends Component {
   constructor(props) {
@@ -24,8 +25,10 @@ class App extends Component {
         <div className="jumbotron">
           <div className="container">
             <div className="col-sm-8-col-sm-offset-2">
+            
               <Router history={browserHistory}>
                 <div>
+                <Navbar />
                   <Route path="/login" component={LoginPage}/>
                   <Route path="/register" component={RegisterPage}/>
                   <ProtectedRoute exact path="/" component={DashboardPage} authStore={this.props.auth}/>

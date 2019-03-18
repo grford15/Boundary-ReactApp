@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import userActions from '../../api/user-service-actions';
 
 class RegisterPage extends React.Component {
     constructor(props) {
@@ -10,7 +11,6 @@ class RegisterPage extends React.Component {
             user: {
                 firstName: '',
                 lastName: '',
-                username: '',
                 password: ''
             },
             submitted: false
@@ -37,11 +37,11 @@ class RegisterPage extends React.Component {
         this.setState({ submitted: true });
         const { user } = this.state;
         const { dispatch } = this.props;
-        /*
-        if (user.firstName && user.lastName && user.username && user.password) {
+
+        if (user.firstName && user.lastName && user.password) {
             dispatch(userActions.register(user));
         }
-        */
+        
     }
 
     render() {
@@ -65,13 +65,13 @@ class RegisterPage extends React.Component {
                         <div className="help-block">Last Name is required</div>
                         }
                     </div>
-                    <div className={'form-group' + (submitted && !user.username ? ' has-error' : '')}>
+                    {/* <div className={'form-group' + (submitted && !user.username ? ' has-error' : '')}>
                         <label htmlFor="username">Username</label>
                         <input type="text" className="form-control" name="username" value={user.username} onChange={this._handleChange} />
                         {submitted && !user.username &&
                         <div className="help-block">Username is required</div>
                         }
-                    </div>
+                    </div> */}
                     <div className={'form-group' + (submitted && !user.password ? ' has-error' : '')}>
                         <label htmlFor="password">Password</label>
                         <input type="password" className="form-control" name="password" value={user.password} onChange={this._handleChange} />

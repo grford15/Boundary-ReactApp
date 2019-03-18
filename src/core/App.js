@@ -14,7 +14,7 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    const {dispatch} = this.props;
+    // const {dispatch} = this.props;
     browserHistory.listen(() => {});
   }
 

@@ -1,6 +1,8 @@
 import {BoundaryJSClient} from "./basclient";
 
-let authServiceClient = new BoundaryJSClient(process.env.REACT_APP_API_BASE_URL + '/api/auth');
+let REACT_APP_API_BASE_URL="http://localhost:8080";
+
+let authServiceClient = new BoundaryJSClient(REACT_APP_API_BASE_URL + '/api/auth');
 
 export default {
 

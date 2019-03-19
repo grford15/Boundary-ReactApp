@@ -3,16 +3,23 @@ import { connect } from 'react-redux';
 
 
 class DashboardPage extends React.Component {
-    // constructor(props){
-    //     super(props);
-    // }
+    constructor(props){
+        super(props);
+        this.state = {
+            user: undefined
+        }
+    }
+
+    
 
     render() {
-        console.log(this.state);
         
+        let user = localStorage.getItem('user');
+
+        console.log(typeof user);
         return (
             <div className="container">
-                <h1>Welcome to your Dashboard</h1>
+                <h1>Welcome to your Dashboard {user}</h1>
             </div>
         );
     }

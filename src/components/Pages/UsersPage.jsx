@@ -28,6 +28,7 @@ class UsersPage extends React.Component {
                     <th scope="col">Forename</th>
                     <th scope="col">Surname</th>
                     <th scope="col">Email</th>
+                    <th scope="col">UserName</th>
                     <th scope="col">Active</th>
                 </tr>
                 </thead>
@@ -40,6 +41,7 @@ class UsersPage extends React.Component {
                                     <td>{user.first_name}</td>
                                     <td>{user.second_name}</td>
                                     <td>{user.email_address}</td>
+                                    <td>{user.username}</td>
                                     <td>{user.is_active ? 'Y' : 'N'}</td>
                                 </tr>
                             )

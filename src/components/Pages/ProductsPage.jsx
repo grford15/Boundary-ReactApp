@@ -36,7 +36,7 @@ class ProductsPage extends React.Component {
                                 <tr key={index}>
                                     <th scope="row">{product.id}</th>
                                     <td>{product.display_name}</td>
-                                    <td>{product.cost}</td>
+                                    <td>£ {product.cost}</td>
                                 </tr>
                             )
                         }

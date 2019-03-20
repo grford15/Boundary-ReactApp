@@ -17,7 +17,7 @@ class DashboardPage extends React.Component {
 
         return (
             <div className="container">
-                <h1>Welcome to your Dashboard {this.state.user.username}</h1>
+                <h1>Welcome to your Dashboard {this.state.user.first_name}</h1>
             </div>
         );
     }

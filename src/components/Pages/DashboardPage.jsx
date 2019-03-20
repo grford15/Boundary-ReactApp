@@ -6,7 +6,7 @@ class DashboardPage extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            user: undefined
+            user: JSON.parse(localStorage.getItem('user'))
         }
     }
 
@@ -14,12 +14,10 @@ class DashboardPage extends React.Component {
 
     render() {
         
-        let user = localStorage.getItem('user');
 
-        console.log(typeof user);
         return (
             <div className="container">
-                <h1>Welcome to your Dashboard {user}</h1>
+                <h1>Welcome to your Dashboard {this.state.user.username}</h1>
             </div>
         );
     }

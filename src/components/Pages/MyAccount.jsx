@@ -1,5 +1,4 @@
 import React from "react";
-import individualServiceClient from "../../api/user-service-client";
 import { connect } from 'react-redux';
 
 class MyAccount extends React.Component {
@@ -13,40 +12,32 @@ class MyAccount extends React.Component {
     }
 
     async componentDidMount() {
-        let userDataReq = await individualServiceClient.getOne();
-        let userData = userDataReq.data;
+        let currentUser = JSON.parse(localStorage.getItem('user'));
+        
 
-        this.setState({user: userData});
+        this.setState({user: currentUser});
+        
     }
 
     render() {
+        
         return (
             this.state.user != null &&
-            <table className="table">
-                <thead className="thead-dark">
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Forename</th>
-                    <th scope="col">Surname</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">UserName</th>
-                    <th scope="col">Active</th>
-                </tr>
-                </thead>
-                <tbody>
-                
-                <tr>
-                    <th scope="row">{this.state.user.id}</th>
-                    <td>{this.state.user.first_name}</td>
-                    <td>{this.state.user.second_name}</td>
-                    <td>{this.state.user.email_address}</td>
-                    <td>{this.state.user.username}</td>
-                    <td>{this.state.user.is_active ? 'Y' : 'N'}</td>
-                </tr>
-                            
-                </tbody>
-            </table>
+
+            <div className="card">
+            <div className="card-body">
+              <h4 className="card-title">Account Details</h4>
+              <p className="card-text font-weight-bold">Name:</p>
+              <p className="card-text"> {this.state.user.first_name + " " + this.state.user.second_name}</p>
+              <p className="card-text font-weight-bold">E-Mail:</p>
+              <p className="card-text"> {this.state.user.email_address}</p>
+              <p className="card-text font-weight-bold">Username:</p>
+              <p className="card-text"> {this.state.user.username}</p>
+              <a className="btn btn-success" href={"/edit/" + this.state.user.id}role="button">Edit Details</a>
+            </div>
+          </div>
         )
+        
     }
 }
 

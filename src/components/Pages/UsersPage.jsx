@@ -21,7 +21,7 @@ class UsersPage extends React.Component {
     render() {
         return (
             this.state.users != null &&
-            <table className="table">
+            <table className="table table-striped">
                 <thead className="thead-dark">
                 <tr>
                     <th scope="col">#</th>

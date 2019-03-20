@@ -21,7 +21,8 @@ class ProductsPage extends React.Component {
     render() {
         return(
             this.state.products != null &&
-            <table className="table">
+            <div>
+            <table className="table table-striped">
                 <thead className="thead-dark">
                 <tr>
                     <th scope="col">#</th>
@@ -44,6 +45,7 @@ class ProductsPage extends React.Component {
                 }
                 </tbody>
             </table>
+            </div>
         )
     }
 

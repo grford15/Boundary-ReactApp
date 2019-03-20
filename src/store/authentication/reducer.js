@@ -1,8 +1,7 @@
 import {USER_LOGGED_OUT, USER_LOGIN_SUCCESS} from "./actions";
 
 const initialState = {
-    loggedIn : false,
-    user: ''
+    loggedIn : false
 };
 
 const reducer = (state = initialState, action) => {

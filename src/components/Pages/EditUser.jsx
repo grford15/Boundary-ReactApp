@@ -11,7 +11,6 @@ class EditUser extends React.Component {
     }
     
     render() {
-        console.log(this.state.user);
         return (
     <div>
         <form>

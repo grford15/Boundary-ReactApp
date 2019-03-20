@@ -1,3 +1,10 @@
+.navbar{
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    left: 0px;
+}
+
 .nav-links{
     color: white;
     display: inline-flex;

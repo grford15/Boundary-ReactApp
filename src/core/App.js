@@ -13,6 +13,7 @@ import ProducsPage from "../components/Pages/ProductsPage";
 import Navbar from "../components/Navbar";
 import MyAccount from '../components/Pages/MyAccount';
 import EditUser from '../components/Pages/EditUser';
+import PurchasesPage from '../components/Pages/PurchasesPage';
 
 class App extends Component {
   constructor(props) {
@@ -42,6 +43,7 @@ class App extends Component {
                   <ProtectedRoute exact path="/products" component={ProducsPage} checkingFunction={this.props.auth} />
                   <ProtectedRoute exact path="/myaccount" component={MyAccount} checkingFunction={this.props.auth} />
                   <ProtectedRoute exact path={"/edit/" + this.state.user.id} component={EditUser} checkingFunction={this.props.auth} user={this.state.user} />
+                  <ProtectedRoute exact path="/purchases" component={PurchasesPage} checkingFunction={this.props.auth} />
                 </div>
               </Router>
             </div>

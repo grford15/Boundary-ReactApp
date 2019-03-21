@@ -14,4 +14,8 @@ export default {
         return userServiceClient.get();
     },
 
+    update(updateData) {
+        return userServiceClient.post(updateData);
+    }
+
 }

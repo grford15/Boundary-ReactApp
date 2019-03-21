@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import './CSS/EditUser.css';
 
 class EditUser extends React.Component {
     

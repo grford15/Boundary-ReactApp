@@ -1,6 +1,7 @@
 import React from 'react';
 import productServiceClient from '../../api/products-service-client';
 import { connect } from 'react-redux';
+import './CSS/ProductsPage.css';
 
 class ProductsPage extends React.Component {
     constructor(props){
@@ -22,7 +23,7 @@ class ProductsPage extends React.Component {
         return(
             this.state.products != null &&
             <div>
-            <table className="table table-striped">
+            <table className="table table-striped table-bordered">
                 <thead className="thead-dark">
                 <tr>
                     <th scope="col">#</th>

@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from 'react-redux';
+import './CSS/MyAccount.css';
 
 class MyAccount extends React.Component {
 

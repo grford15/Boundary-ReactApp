@@ -15,7 +15,9 @@ export default {
     },
 
     update(updateData) {
+        
         return userServiceClient.post(updateData);
+    
     },
 
     logout() {

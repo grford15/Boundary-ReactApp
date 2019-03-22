@@ -32,9 +32,9 @@ class EditUser extends React.Component {
         e.preventDefault()
         
         this.setState({ submitted: true });
-        const { first_name, second_name, email_address, username, password, id } = this.state;
+        const { first_name, second_name, email_address, username, password, id } = this.state.user;
         const { dispatch } = this.props;
-
+        
         dispatch(eventUpdateAsync(first_name, second_name, email_address, username, password, id));
     }
     

@@ -77,19 +77,20 @@ export function eventUpdateAsync(first_name, second_name, email_address, usernam
             password: password,
             id: id
         };
-
+        
         dispatch({ type: USER_UPDATE_REQUEST, payload: payload});
-
+        
         try{
+            
             let response = await userServiceClient.update(payload);
-
+            
             browserHistory.push('/myaccount');
 
             dispatch(actionUpdateSuccess());
 
             return response;
         } catch(e){
-            dispatch(actionLoginFailure(e));
+            dispatch(actionUpdateFailure(e));
         }
     }
 }

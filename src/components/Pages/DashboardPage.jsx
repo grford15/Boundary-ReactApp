@@ -25,7 +25,7 @@ class DashboardPage extends React.Component {
                 <div className="list-group">
                     <a href="/products" className="list-group-item">Products</a>
                     <a href="/myaccount" className="list-group-item">My Account</a>
-                    <a href="/purchases" className="list-group-item">Purchases</a>
+                    <a href="/userpurchases" className="list-group-item">My Purchases</a>
                 </div>
             </div>
         )

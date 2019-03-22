@@ -6,9 +6,10 @@ export const USER_LOGGED_OUT = '@@auth/LOG_OUT';
 export const USER_LOGIN_REQUEST = '@@auth/LOG_IN_REQ';
 export const USER_LOGIN_SUCCESS = '@@auth/LOG_IN_SUCCESS';
 export const USER_LOGIN_FAILURE = '@@auth/LOG_IN_FAILURE';
-export const USER_UPDATE_REQUEST = '@@auth/UPDATE_REQ';
-export const USER_UPDATE_SUCCESS = '@@auth/UPDATE_SUCCESS';
-export const USER_UPDATE_FAILURE = '@@auth/UPDATE_FAILURE';
+export const USER_UPDATE_REQUEST = 'UPDATE_REQ';
+export const USER_UPDATE_SUCCESS = 'UPDATE_SUCCESS';
+export const USER_UPDATE_FAILURE = 'UPDATE_FAILURE';
+export const LOGOUT = 'USER_LOGOUT';
 
 export function actionLoginSuccess() {
     return {
@@ -65,6 +66,11 @@ export function eventLoginAsync(username, password) {
             dispatch(actionLoginFailure(e));
         }
     }
+}
+
+export function logOut() {
+    userServiceClient.logout();
+    return { type: LOGOUT };
 }
 
 export function eventUpdateAsync(first_name, second_name, email_address, username, password, id) {

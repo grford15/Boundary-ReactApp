@@ -41,7 +41,7 @@ class EditUser extends React.Component {
     render() {
         return (
     <div>
-        <form>
+        <form name="form" onSubmit={this._handleSubmit}>
             <div className="form-row">
                 <div className="form-group col-md-6">
                 <label >First Name</label>
@@ -62,7 +62,7 @@ class EditUser extends React.Component {
                 <input type="password" className="form-control" name="password" value={this.state.user.password} onChange={this._handleChange}/>  
                 </div>
                 <div className="form-group">
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <button type="submit" className="btn btn-primary" onSubmit={this._handleSubmit}>Submit</button>
                 </div>
             </div>
         </form>

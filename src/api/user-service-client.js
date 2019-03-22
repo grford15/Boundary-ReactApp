@@ -16,6 +16,12 @@ export default {
 
     update(updateData) {
         return userServiceClient.post(updateData);
+    },
+
+    logout() {
+        localStorage.removeItem('isAuth');
+        localStorage.removeItem('user');
+        
     }
 
 }

@@ -2,10 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import {eventLoginAsync} from "../../store/authentication/actions";
+import {logOut} from '../../store/authentication/actions';
 
 class LoginPage extends React.Component {
     constructor(props){
         super(props);
+
+        this.props.dispatch(logOut());
+
 
         this.state = {
             username: '',

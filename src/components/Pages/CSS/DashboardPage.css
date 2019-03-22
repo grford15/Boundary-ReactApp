@@ -1,0 +1,17 @@
+.list-group {
+    margin-top: 2rem;
+}
+
+.list-group-item {
+    color: #000;
+}
+
+.list-group-item:hover {
+    background-color: #CFCFCF;
+    text-decoration: none;
+    color: white;
+}
+
+.display-3 {
+    color: #31393C;
+}

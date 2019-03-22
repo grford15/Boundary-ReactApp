@@ -49,17 +49,10 @@ export function eventLoginAsync(username, password) {
         try {
             let response = await authServiceClient.login(payload);
         
-
-            // '/' is the browser history page, pushing this key will allow us to move on
-            browserHistory.push('/');
-
             dispatch(actionLoginSuccess());
             let theUser = JSON.parse(response.request.responseText);
-            
-            
-
             localStorage.setItem('user', JSON.stringify(theUser[0][0]));
-            
+            browserHistory.push('/');
             return response;
             
         } catch (e) {

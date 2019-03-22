@@ -20,8 +20,6 @@ export default {
 
     logout() {
         localStorage.removeItem('isAuth');
-        localStorage.removeItem('user');
-        
     }
 
 }

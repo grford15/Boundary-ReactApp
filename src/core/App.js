@@ -19,6 +19,10 @@ class App extends Component {
   constructor(props) {
     super(props);
 
+    this.state = {
+      user: JSON.parse(localStorage.getItem('user'))
+    }
+
     // const {dispatch} = this.props;
     browserHistory.listen(() => {});
   }
@@ -38,8 +42,8 @@ class App extends Component {
                   <ProtectedRoute exact path="/users" component={UsersPage} checkingFunction={this.props.auth}/>
                   <ProtectedRoute exact path="/products" component={ProducsPage} checkingFunction={this.props.auth} />
                   <ProtectedRoute exact path="/myaccount" component={MyAccount} checkingFunction={this.props.auth} />
-                  {/* <ProtectedRoute exact path={"/edit/" + this.state.user.id} component={EditUser} checkingFunction={this.props.auth} /> */}
                   <ProtectedRoute exact path="/purchases" component={PurchasesPage} checkingFunction={this.props.auth} />
+                  {this.state.user !== null && <ProtectedRoute exact path={"/edit/" + this.state.user.id} component={EditUser} checkingFunction={this.props.auth} />}
                 </div>
               </Router>
             </div>

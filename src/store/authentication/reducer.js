@@ -1,7 +1,8 @@
 import {USER_LOGGED_OUT, USER_LOGIN_SUCCESS} from "./actions";
 
 const initialState = {
-    loggedIn : false
+    loggedIn : false,
+    user: undefined
 };
 
 const reducer = (state = initialState, action) => {
@@ -9,7 +10,8 @@ const reducer = (state = initialState, action) => {
         case USER_LOGIN_SUCCESS: {
             localStorage.setItem('isAuth', 'Y');
             return Object.assign({}, state, {
-                loggedIn: true
+                loggedIn: true,
+                user: JSON.parse(localStorage.getItem('user'))
             });
             
             

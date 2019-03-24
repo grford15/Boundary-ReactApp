@@ -17,11 +17,13 @@
     text-shadow: -1px 1px 15px #212020;
     color: white;
     text-decoration: none;
+    transform: scale(1.1);
 }
 
 .navbar-brand:hover {
     text-shadow: -1px 1px 15px #212020;
     color: white;
     text-decoration: none;
+    transform: scale(1.1);
 }
 

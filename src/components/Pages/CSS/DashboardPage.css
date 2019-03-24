@@ -1,9 +1,12 @@
 .list-group {
     margin-top: 2rem;
+    
 }
 
 .list-group-item {
     color: #000;
+    background-color: #E8E8E8;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .list-group-item:hover {
@@ -14,4 +17,5 @@
 
 .display-3 {
     color: #31393C;
+    font-family: 'Open Sans', sans-serif;
 }

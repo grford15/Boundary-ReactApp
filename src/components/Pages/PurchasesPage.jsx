@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import purchasesServiceClient from '../../api/purchases-service-client';
 import userServiceClient from '../../api/user-service-client';
 import productsServiceClient from '../../api/products-service-client';
+import './CSS/PurchasesPage.css';
 var _ = require('lodash/core');
 
 class PurchasesPage extends React.Component {

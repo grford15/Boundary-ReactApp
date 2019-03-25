@@ -11,13 +11,16 @@
     color: white;
     display: inline-flex;
     margin: 0.5rem;
+    transition: border 0.2s ease-in-out;
+    border-bottom: 1px solid transparent;
 }
 
 .nav-links:hover{
     text-shadow: -1px 1px 15px #212020;
     color: white;
     text-decoration: none;
-    transform: scale(1.1);
+    transform: scale(1.05);
+    border-color: white;
 }
 
 .navbar-brand:hover {

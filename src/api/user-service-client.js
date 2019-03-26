@@ -20,6 +20,7 @@ export default {
     
     },
 
+
     logout() {
         localStorage.removeItem('isAuth');
     }

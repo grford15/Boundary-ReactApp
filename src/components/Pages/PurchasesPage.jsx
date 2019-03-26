@@ -40,6 +40,7 @@ class PurchasesPage extends React.Component {
             this.state.purchases != null && this.state.users != null && this.state.products != null &&
             
             <div>
+                <h2>Purchases</h2>
             <table className="table table-striped table-bordered">
                 <thead className="thead-dark">
                 <tr>

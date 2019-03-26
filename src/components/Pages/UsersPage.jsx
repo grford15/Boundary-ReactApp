@@ -21,6 +21,8 @@ class UsersPage extends React.Component {
     render() {
         return (
             this.state.users != null &&
+            <div>
+                <h2>Users</h2>
             <table className="table table-striped">
                 <thead className="thead-dark">
                 <tr>
@@ -50,6 +52,7 @@ class UsersPage extends React.Component {
                 }
                 </tbody>
             </table>
+            </div>
         );
     }
 }

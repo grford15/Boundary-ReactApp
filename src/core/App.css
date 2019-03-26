@@ -9,4 +9,9 @@
 
 .table {
   background-color: #E8E8E8;
+  font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+  margin: 1rem;
 }

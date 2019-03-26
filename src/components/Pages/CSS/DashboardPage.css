@@ -5,17 +5,17 @@
 
 .list-group-item {
     color: #000;
-    background-color: #E8E8E8;
+    background-color: #F1F1F1;
     font-family: 'Open Sans', sans-serif;
 }
 
 .list-group-item:hover {
-    background-color: #CFCFCF;
+    background-color: #D2D2D2;
     text-decoration: none;
     color: white;
 }
 
 .display-3 {
-    color: #31393C;
+    color: #141414;
     font-family: 'Open Sans', sans-serif;
 }

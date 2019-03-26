@@ -31,12 +31,17 @@ class App extends Component {
   render() {
     return (
         <div className="jumbotron">
-          <div className="container">
-            <div className="col-sm-8-col-sm-offset-2">
+          <div className="container-fluid">
             
               <Router history={browserHistory}>
                 <div>
-                <Navbar />
+                  <div className="row">
+                    <div className="col">
+                      <Navbar />
+                    </div>
+                  </div>
+                  <div className="row">
+                  <div className="col">
                   <Route path="/login" component={LoginPage}/>
                   <Route path="/register" component={RegisterPage}/>
                   <ProtectedRoute exact path="/" component={DashboardPage} authStore={this.props.auth}/>
@@ -46,9 +51,10 @@ class App extends Component {
                   <ProtectedRoute exact path="/purchases" component={PurchasesPage} checkingFunction={this.props.auth} />
                   {this.state.user !== null && <ProtectedRoute exact path={"/edit/" + this.state.user.id} component={EditUser} checkingFunction={this.props.auth} />}
                   {this.state.user !== null && <ProtectedRoute exact path={"/userpurchases/"} component={UserPurchases} checkingFunction={this.props.auth} />}
+                  </div>
+                  </div>
                 </div>
               </Router>
-            </div>
           </div>
         </div>
     );

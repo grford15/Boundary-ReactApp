@@ -5,10 +5,12 @@
     left: 0px;
     margin-bottom: 2rem;
     font-family: 'Open Sans', sans-serif;
+    background-color: #274060;
+    z-index: 1;
 }
 
 .nav-links{
-    color: white;
+    color: #F5F5F5;
     display: inline-flex;
     margin: 0.5rem;
     transition: border 0.2s ease-in-out;
@@ -17,15 +19,15 @@
 
 .nav-links:hover{
     text-shadow: -1px 1px 15px #212020;
-    color: white;
+    color: #F5F5F5;
     text-decoration: none;
     transform: scale(1.05);
-    border-color: white;
+    border-color: #F5F5F5;
 }
 
 .navbar-brand:hover {
     text-shadow: -1px 1px 15px #212020;
-    color: white;
+    color: #F5F5F5;
     text-decoration: none;
     transform: scale(1.1);
 }

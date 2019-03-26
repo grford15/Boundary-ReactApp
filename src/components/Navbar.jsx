@@ -3,7 +3,7 @@ import './Navbar.css';
 
 const Navbar = () => {
     return(
-    <nav className="navbar navbar-dark bg-primary">
+    <nav className="navbar navbar-dark">
         <a className="navbar-brand" href="/">DashBoard</a>
         <div  id="navbarNav">
             <a className="nav-links" href="/login">Login</a>

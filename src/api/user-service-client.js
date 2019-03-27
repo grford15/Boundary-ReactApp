@@ -14,9 +14,10 @@ export default {
         return userServiceClient.get();
     },
 
-    update(updateData) {
+    update(userData) {
+        let url = "http://localhost:8080/api/users";
         
-        return userServiceClient.post(updateData);
+        return userServiceClient.post(url, userData);
     
     },
 

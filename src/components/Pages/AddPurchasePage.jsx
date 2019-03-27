@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import userServiceClient from '../../api/user-service-client';
 import productsServiceClient from '../../api/products-service-client';
+import { eventUpdatePurchases } from '../../store/authentication/actions';
 
 class AddPurchasePage extends React.Component {
 
@@ -10,8 +11,8 @@ class AddPurchasePage extends React.Component {
         this.state = {
             users: undefined,
             products: undefined,
-            user: undefined,
-            product: undefined,
+            user_id: undefined,
+            product_id: undefined,
             quantity: 0
         }
 
@@ -36,12 +37,12 @@ class AddPurchasePage extends React.Component {
 
     handleUserChange(event) {
         let result = event.target.value;
-        this.setState({user: result}); 
+        this.setState({user_id: result}); 
     }
 
     handleProductChange(event) {
         let result = event.target.value;
-        this.setState({product: result});
+        this.setState({product_id: result});
     }
 
     handleQuantityChange(event) {
@@ -51,6 +52,11 @@ class AddPurchasePage extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
+
+        const {user_id, product_id, quantity} = this.state;
+        const { dispatch } = this.props;
+
+        dispatch(eventUpdatePurchases(user_id, product_id, quantity));
     }
 
     render() {

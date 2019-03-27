@@ -1,6 +1,7 @@
 import authServiceClient from "./../../api/auth-service-client";
 import {browserHistory} from "./../../core/browserhistory";
 import userServiceClient from "./../../api/user-service-client";
+import purchasesServiceClient from "../../api/purchases-service-client";
 
 export const USER_LOGGED_OUT = '@@auth/LOG_OUT';
 export const USER_LOGIN_REQUEST = '@@auth/LOG_IN_REQ';
@@ -10,6 +11,9 @@ export const USER_UPDATE_REQUEST = 'UPDATE_REQ';
 export const USER_UPDATE_SUCCESS = 'UPDATE_SUCCESS';
 export const USER_UPDATE_FAILURE = 'UPDATE_FAILURE';
 export const LOGOUT = 'USER_LOGOUT';
+export const PRODUCT_UPDATE_REQUEST = 'PRODUCT_UPDATE_REQUEST';
+export const PRODUCT_UPDATE_SUCCESS = 'PRODUCT_UPDATE_SUCCESS';
+export const PRODUCT_UPDATE_FAILURE = 'PRODUCT_UPDATE_FAILURE';
 
 export function actionLoginSuccess() {
     return {
@@ -36,6 +40,19 @@ export function actionLoginFailure(error) {
         error
     }
 };
+
+export function actionUpdatePurchaseSuccess() {
+    return {
+        type: PRODUCT_UPDATE_SUCCESS
+    }
+}
+
+export function actionUpdatePurchaseFailure(error) {
+    return {
+        type: PRODUCT_UPDATE_FAILURE,
+        error
+    }
+}
 
 export function eventLoginAsync(username, password) {
 
@@ -91,6 +108,31 @@ export function eventUpdateAsync(first_name, second_name, email_address, usernam
             return response;
         } catch(e){
             dispatch(actionUpdateFailure(e));
+        }
+    }
+}
+
+export function eventUpdatePurchases(user_id, product_id, quantity) {
+
+    return async (dispatch) => {
+        let payload = {
+            user_id: user_id,
+            product_id: product_id,
+            quantity: quantity
+        };
+
+        dispatch({ type: PRODUCT_UPDATE_REQUEST, payload: payload});
+
+        try{
+            let response = await purchasesServiceClient.add(payload);
+
+            browserHistory.push("/purchases");
+
+            dispatch(actionUpdatePurchaseSuccess());
+
+            return response;
+        }catch(e){
+            dispatch(actionUpdatePurchaseFailure(e));
         }
     }
 }

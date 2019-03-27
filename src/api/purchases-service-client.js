@@ -9,5 +9,9 @@ export default {
 
     getAll() {
         return purchaseServiceClient.get();
+    },
+
+    add(purchaseData) {
+        return purchaseServiceClient.post("http://localhost:8080/api/purchases", purchaseData);
     }
 }

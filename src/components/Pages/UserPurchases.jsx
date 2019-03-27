@@ -42,7 +42,7 @@ class UserPurchases extends React.Component {
             this.state.purchases !== undefined && this.state.user !== undefined && this.state.products !== undefined &&
             
             <div>
-                <h2>My Purchases</h2>
+                <h2 className='text-center'>My Purchases</h2>
                 <table className="table table-striped table-bordered">
                     <thead className="thead-dark">
                         <tr>

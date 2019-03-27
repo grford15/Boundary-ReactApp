@@ -23,7 +23,7 @@ class ProductsPage extends React.Component {
         return(
             this.state.products != null &&
             <div>
-                <h2>Products</h2>
+                <h2 className='text-center'>Products</h2>
             <table className="table table-striped table-bordered">
                 <thead className="thead-dark">
                 <tr>

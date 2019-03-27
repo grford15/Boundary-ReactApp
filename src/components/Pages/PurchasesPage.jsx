@@ -40,7 +40,8 @@ class PurchasesPage extends React.Component {
             this.state.purchases != null && this.state.users != null && this.state.products != null &&
             
             <div>
-                <h2>Purchases</h2>
+                <h2 className='text-center'>Purchases</h2>
+                <a href="/addpurchase" className="btn btn-primary">Add A Purchase</a>
             <table className="table table-striped table-bordered">
                 <thead className="thead-dark">
                 <tr>

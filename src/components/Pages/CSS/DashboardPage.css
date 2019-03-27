@@ -6,7 +6,7 @@
 .list-group-item {
     color: #000;
     background-color: #F1F1F1;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Barlow', sans-serif;
 }
 
 .list-group-item:hover {
@@ -17,5 +17,5 @@
 
 .display-3 {
     color: #141414;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Barlow', sans-serif;
 }
